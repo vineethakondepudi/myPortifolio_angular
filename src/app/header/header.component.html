@@ -1,0 +1,44 @@
+<mat-toolbar>
+  <button mat-icon-button aria-label="Menu" (click)="toggleMenu()">
+    <mat-icon>{{ menuOpen ? 'close' : 'menu' }}</mat-icon>
+  </button>
+
+  <!-- Bio Link -->
+  <span>
+    <a mat-button 
+       [routerLink]="['/bio']"
+       routerLinkActive="active-link"
+       [routerLinkActiveOptions]="{ exact: true }">
+      Bio
+    </a>
+  </span>
+
+  <!-- About Link -->
+  <span>
+    <a mat-button 
+       [routerLink]="['/about']"
+       routerLinkActive="active-link"
+       [routerLinkActiveOptions]="{ exact: true }">
+      About
+    </a>
+  </span>
+
+  <!-- Contact Link -->
+  <span>
+    <a mat-button 
+       [routerLink]="['/contact']"
+       routerLinkActive="active-link"
+       [routerLinkActiveOptions]="{ exact: true }">
+      Contact
+    </a>
+  </span>
+
+  <span class="example-spacer"></span>
+
+  <button mat-icon-button aria-label="Favorite">
+    <mat-icon>favorite</mat-icon>
+  </button>
+  <button mat-icon-button aria-label="Share">
+    <mat-icon>share</mat-icon>
+  </button>
+</mat-toolbar>

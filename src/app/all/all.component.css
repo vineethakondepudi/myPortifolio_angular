@@ -1,0 +1,49 @@
+/* General styles for the toolbar */
+.menu-toolbar {
+  display: flex;
+  justify-content: space-around;
+  background-color: #f8f9fa;
+  padding: 10px;
+}
+
+.menu-toolbar button {
+  color: white;
+  font-family: sans-serif;
+  font-weight: bold;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  text-shadow: 2px 2px 0 rgba(0, 0, 0, 0.5); /* Adjusted for better readability */
+  font-size: 18px; /* Adjusted for better readability across devices */
+}
+
+/* Styles for desktop view */
+@media (min-width: 768px) {
+  .menu-toolbar button {
+    font-size: 24px; /* Larger font size for desktop */
+    text-shadow: 3px 3px 0 rgba(0, 0, 0, 0.5); /* Adjusted for larger screens */
+  }
+}
+
+/* Styles for tablet view */
+@media (min-width: 600px) and (max-width: 767px) {
+  .menu-toolbar {
+    flex-wrap: wrap; /* Allows buttons to wrap to the next line */
+  }
+
+  .menu-toolbar button {
+    font-size: 22px; /* Slightly smaller font for tablet */
+  }
+}
+
+/* Styles for mobile view */
+@media (max-width: 599px) {
+  .menu-toolbar {
+    flex-direction: column; /* Stack buttons vertically */
+    align-items: center; /* Center-align the buttons */
+  }
+
+  .menu-toolbar button {
+    font-size: 18px; /* Smaller font size for mobile */
+    margin-bottom: 10px; /* Add space between buttons */
+  }
+}

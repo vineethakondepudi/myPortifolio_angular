@@ -1,0 +1,17 @@
+<mat-drawer-container class="example-container" autosize>
+  <mat-drawer-content class="example-sidenav-content">
+    <header>
+      <app-header></app-header>
+    </header>
+    <marquee width="98%" direction="left" scrollamount="12">
+      <h1>Vineetha Kondepudi Software Developer</h1>
+    </marquee>
+    <main class="content-area">
+      <router-outlet></router-outlet> <!-- Dynamic content area -->
+      <app-loader *ngIf="loading"></app-loader> <!-- Loader displayed based on loading state -->
+    </main>
+    <footer>
+      <app-footer></app-footer>
+    </footer>
+  </mat-drawer-content>
+</mat-drawer-container>

@@ -1,0 +1,35 @@
+<mat-card>
+  <mat-card-content>
+    <h1>Contact Us</h1>
+    <h2>Send us a message</h2>
+    <form [formGroup]="contactForm" class="example-form" (ngSubmit)="onSubmit()">
+      <div class="name-fields">
+        <mat-form-field class="half-width">
+          <mat-label>First Name</mat-label>
+          <input matInput formControlName="firstName" placeholder="Enter your First Name">
+        </mat-form-field>
+        <mat-form-field class="half-width">
+          <mat-label>Last Name</mat-label>
+          <input matInput formControlName="lastName" placeholder="Enter your Last Name">
+        </mat-form-field>
+      </div>
+
+      <mat-form-field class="full-width">
+        <mat-label>Email</mat-label>
+        <input matInput formControlName="email" placeholder="Enter your email" type="email">
+      </mat-form-field>
+
+      <mat-form-field class="full-width">
+        <mat-label>Message</mat-label>
+        <textarea matInput formControlName="message" placeholder="Enter your message" rows="4" maxlength="500"></textarea>
+        <mat-hint align="end">{{contactForm.get('message')?.value?.length || 0}} / 50</mat-hint>
+      </mat-form-field>
+
+      <section>
+        <div class="example-button-row">
+          <button mat-raised-button color="primary" type="submit">Submit</button>
+        </div>
+      </section>
+    </form>
+  </mat-card-content>
+</mat-card>

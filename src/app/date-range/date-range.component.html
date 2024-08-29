@@ -1,0 +1,28 @@
+<div class="date-range-calculator-container">
+    <mat-card>
+      <form [formGroup]="dateRangeForm" (ngSubmit)="calculateDaysBetween()">
+        <h2>Calculate Days Between Dates</h2>
+        <mat-form-field class="example-full-width">
+          <mat-label>Start Date</mat-label>
+          <input matInput [matDatepicker]="startPicker" formControlName="startDate">
+          <mat-datepicker-toggle matIconSuffix [for]="startPicker">
+            <mat-icon matDatepickerToggleIcon>keyboard_arrow_down</mat-icon>
+          </mat-datepicker-toggle>
+          <mat-datepicker #startPicker></mat-datepicker>
+        </mat-form-field>
+        <mat-form-field class="example-full-width">
+          <mat-label>End Date</mat-label>
+          <input matInput [matDatepicker]="endPicker" formControlName="endDate">
+          <mat-datepicker-toggle matIconSuffix [for]="endPicker">
+            <mat-icon matDatepickerToggleIcon>keyboard_arrow_down</mat-icon>
+          </mat-datepicker-toggle>
+          <mat-datepicker #endPicker></mat-datepicker>
+        </mat-form-field>
+        <button mat-raised-button color="primary" type="submit" [disabled]="!dateRangeForm.valid">Calculate Days</button>
+      </form>
+      <div *ngIf="daysBetween !== null">
+        <h3>Days Between: {{ daysBetween }}</h3>
+      </div>
+    </mat-card>
+  </div>
+  

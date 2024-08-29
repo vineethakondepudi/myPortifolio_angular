@@ -1,0 +1,20 @@
+.project-title {
+    cursor: pointer;
+    text-decoration: underline;
+  }
+  
+  .project-display {
+    margin: 20px 0;
+  }
+  
+  .project-navigation {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+  }
+  
+  .project-navigation button {
+    background-color: #007bff;
+    color: white;
+  }
+  

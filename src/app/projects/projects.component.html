@@ -1,0 +1,26 @@
+<mat-card>
+    <mat-card-content>
+      <h1>Projects</h1>
+      <div class="project-display">
+        <h2 (click)="toggleDetails()" class="project-title">
+          {{ getCurrentProject().title }}
+        </h2>
+        <div *ngIf="detailsVisible">
+          <h3>Role: {{ getCurrentProject().role }}</h3>
+          <p><strong>Description:</strong> {{ getCurrentProject().description }}</p>
+          <p><strong>Responsibilities:</strong></p>
+          <ul>
+            <li *ngFor="let responsibility of getCurrentProject().responsibilities">
+              {{ responsibility }}
+            </li>
+          </ul>
+          <p><strong>Environment:</strong> {{ getCurrentProject().environment.join(', ') }}</p>
+        </div>
+      </div>
+      <div class="project-navigation">
+        <button mat-button (click)="prevProject()">Previous</button>
+        <button mat-button (click)="nextProject()">Next</button>
+      </div>
+    </mat-card-content>
+  </mat-card>
+  

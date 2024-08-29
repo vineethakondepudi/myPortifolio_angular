@@ -1,0 +1,66 @@
+<mat-card *ngFor="let element of paginatedData" class="data-card">
+  <mat-card-header>
+    <mat-card-title>{{ element.name }}</mat-card-title>
+  </mat-card-header>
+
+  <mat-card-content>
+    <table class="data-table">
+      <thead>
+        <tr>
+          <th>Id</th>
+          <th>Name</th>
+          <th>Weight</th>
+          <th>Symbol</th>
+          <th>Actions</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>{{ element.id }}</td>
+          <td>{{ element.name }}</td>
+          <td>{{ element.weight }}</td>
+          <td>{{ element.symbol }}</td>
+          <td>
+            <button mat-icon-button aria-label="Edit" (click)="onEdit(element)">
+              <mat-icon>edit</mat-icon>
+            </button>
+            <button mat-icon-button aria-label="Toggle" (click)="onAdd(element)">
+              <mat-icon>{{ element.expanded ? 'remove' : 'add' }}</mat-icon>
+            </button>
+          </td>
+        </tr>
+
+        <!-- Loading Indicator -->
+        <tr *ngIf="element.loading">
+          <td colspan="5" class="loading-indicator">
+            <mat-spinner diameter="50"></mat-spinner>
+          </td>
+        </tr>
+
+        <!-- Expanded Content -->
+        <tr *ngIf="element.expanded && !element.loading" class="expanded-content">
+          <td colspan="5">
+            <table class="data-table">
+              <thead>
+                <tr>
+                  <th>Title</th>
+                  <th>Completed</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>{{ element.title }}</td>
+                  <td>{{ element.completed ? 'Yes' : 'No' }}</td>
+                </tr>
+              </tbody>
+            </table>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </mat-card-content>
+</mat-card>
+
+<div class="pagination">
+  <button *ngFor="let page of pages" (click)="selectPage(page)" [class.active]="page === currentPage">{{ page }}</button>
+</div>

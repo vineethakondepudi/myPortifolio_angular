@@ -1,0 +1,21 @@
+<div class="age-calculator-container">
+    <mat-card>
+      <form [formGroup]="ageForm" (ngSubmit)="calculateAge()">
+        <h2>Calculate Your Age</h2>
+        <mat-form-field class="example-full-width">
+          <mat-label>Choose a date</mat-label>
+          <input matInput [matDatepicker]="picker" formControlName="birthDate">
+          <mat-hint>MM/DD/YYYY</mat-hint>
+          <mat-datepicker-toggle matIconSuffix [for]="picker">
+            <mat-icon matDatepickerToggleIcon>keyboard_arrow_down</mat-icon>
+          </mat-datepicker-toggle>
+          <mat-datepicker #picker></mat-datepicker>
+        </mat-form-field>
+        <button mat-raised-button color="primary" type="submit" [disabled]="!ageForm.valid">Calculate Age</button>
+      </form>
+      <div *ngIf="age !== null">
+        <h3>Your Age: {{ age }} years</h3>
+      </div>
+    </mat-card>
+  </div>
+  

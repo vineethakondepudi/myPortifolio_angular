@@ -1,0 +1,26 @@
+.example-container {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+header {
+  flex: 0 0 auto;
+}
+
+.content-area {
+  flex: 1 1 auto;
+  padding: 20px;
+  text-align: center;
+}
+
+footer {
+  flex: 0 0 auto;
+}
+
+
+.example-sidenav-content {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
